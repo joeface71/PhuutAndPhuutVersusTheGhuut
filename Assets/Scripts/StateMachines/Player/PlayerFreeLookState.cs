@@ -8,11 +8,14 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.InputReader.AimEvent += OnAim;
+
         stateMachine.Animator.CrossFadeInFixedTime("FreeLookBlendTree", 0.1f);
     }
 
     public override void Exit()
     {
+        stateMachine.InputReader.AimEvent -= OnAim;
     }
 
     public override void Tick(float deltaTime)
@@ -53,6 +56,11 @@ public class PlayerFreeLookState : PlayerBaseState
             Quaternion.LookRotation(movement),
             deltaTime * stateMachine.RotationDamping
             );
+    }
+
+    private void OnAim()
+    {
+        stateMachine.SwitchState(new PlayerAimState(stateMachine));
     }
 
 }

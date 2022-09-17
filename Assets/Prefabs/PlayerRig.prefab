@@ -447,6 +447,10 @@ MonoBehaviour:
     m_VirtualCamera: {fileID: 4719680572893323111}
     m_ActivateAfter: 0
     m_MinDuration: 0
+  - m_FullHash: 1605495373
+    m_VirtualCamera: {fileID: 4372644313411324657}
+    m_ActivateAfter: 0
+    m_MinDuration: 0
   m_DefaultBlend:
     m_Style: 1
     m_Time: 0.5
@@ -464,6 +468,8 @@ MonoBehaviour:
     m_ParentHash: 585382737
   - m_Hash: 2009079396
     m_ParentHash: 585382737
+  - m_Hash: 1605495373
+    m_ParentHash: 756556552
 --- !u!1 &6705406189292018101
 GameObject:
   m_ObjectHideFlags: 3
@@ -488,7 +494,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6705406189292018101}
-  m_LocalRotation: {x: 0.16007553, y: -0.000000016984501, z: 0.0000000027543208, w: 0.9871048}
+  m_LocalRotation: {x: 0.16007553, y: 0.000000016984504, z: -0.0000000027543212, w: 0.9871048}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -751,7 +757,7 @@ MonoBehaviour:
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
     m_Wrap: 0
@@ -770,7 +776,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 200
+    m_MaxSpeed: 100
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -849,7 +855,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9040199129946534040}
-  m_LocalRotation: {x: 0.19582643, y: 8.193928e-16, z: -2.5162604e-16, w: 0.98063856}
+  m_LocalRotation: {x: 0.19582643, y: -8.193928e-16, z: 2.5162604e-16, w: 0.98063856}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1116,6 +1122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400606903734266566, guid: 136626d99917ca74792c00686b35b1bf,
+        type: 3}
+      propertyPath: <AimingMovementSpeed>k__BackingField
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 136626d99917ca74792c00686b35b1bf, type: 3}

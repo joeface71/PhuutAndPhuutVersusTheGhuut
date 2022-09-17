@@ -11,6 +11,7 @@ public class PlayerStateMachine : StateMachine
     public Transform MainCameraTransform { get; private set; }
 
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
+    [field: SerializeField] public float AimingMovementSpeed { get; private set; }
     [field: SerializeField] public float RotationDamping { get; private set; }
 
 
