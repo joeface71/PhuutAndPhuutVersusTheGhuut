@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 453406000948661962}
   - component: {fileID: 453406000948661957}
-  - component: {fileID: 453406000948661960}
   - component: {fileID: 1770864174858925109}
+  - component: {fileID: 3400606903734266566}
+  - component: {fileID: 1099102687}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -46,7 +47,7 @@ Animator:
   m_GameObject: {fileID: 453406000948661956}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 16044bf911e3e664d81c3be8863c77e8, type: 3}
-  m_Controller: {fileID: 9100000, guid: 0dd0ab895447fd049b66a03e03c1e0fe, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5bc326e4e200bec4da1e762c1b2a484c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -56,20 +57,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &453406000948661960
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453406000948661956}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.7202207
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8934881, z: 0}
 --- !u!143 &1770864174858925109
 CharacterController:
   m_ObjectHideFlags: 0
@@ -88,6 +75,35 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3400606903734266566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453406000948661956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75382d7d8eaa204f8e4a3708ec11ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InputReader>k__BackingField: {fileID: 1099102687}
+  <Controller>k__BackingField: {fileID: 1770864174858925109}
+  <Animator>k__BackingField: {fileID: 453406000948661957}
+  <FreeLookMovementSpeed>k__BackingField: 5
+  <RotationDamping>k__BackingField: 5
+--- !u!114 &1099102687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453406000948661956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5753df526010b324bb9abadee23fe54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &453406000960420166
 GameObject:
   m_ObjectHideFlags: 0

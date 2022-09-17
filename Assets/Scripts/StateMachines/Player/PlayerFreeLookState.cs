@@ -8,6 +8,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.Animator.CrossFadeInFixedTime("FreeLookBlendTree", 0.1f);
     }
 
     public override void Exit()
@@ -19,12 +20,22 @@ public class PlayerFreeLookState : PlayerBaseState
         Vector3 movement = CalculateMovement();
 
         Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime);
+
+        if (stateMachine.InputReader.MovementValue == Vector2.zero)
+        {
+            stateMachine.Animator.SetFloat("FreeLookSpeed", 0f, 0.1f, deltaTime);
+            return;
+        }
+        stateMachine.Animator.SetFloat("FreeLookSpeed", 1f, 0.1f, deltaTime);
+
+        FaceMovementDirection(movement, deltaTime);
     }
+
 
     private Vector3 CalculateMovement()
     {
-        Vector3 forward = stateMachine.FreeLookCamera.transform.forward;
-        Vector3 right = stateMachine.FreeLookCamera.transform.right;
+        Vector3 forward = stateMachine.MainCameraTransform.forward;
+        Vector3 right = stateMachine.MainCameraTransform.right;
 
         forward.y = 0f;
         right.y = 0f;
@@ -34,4 +45,14 @@ public class PlayerFreeLookState : PlayerBaseState
 
         return forward * stateMachine.InputReader.MovementValue.y + right * stateMachine.InputReader.MovementValue.x;
     }
+
+    private void FaceMovementDirection(Vector3 movement, float deltaTime)
+    {
+        stateMachine.transform.rotation = Quaternion.Lerp(
+            stateMachine.transform.rotation,
+            Quaternion.LookRotation(movement),
+            deltaTime * stateMachine.RotationDamping
+            );
+    }
+
 }
